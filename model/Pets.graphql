@@ -1,0 +1,53 @@
+"""The start of any mutation"""
+type Mutation {
+  """
+  Creates a new pet in the store.  Duplicates are allowed
+  
+  Equivalent to POST /pets
+  """
+  addPet(
+    """No description available."""
+    newPetInput: NewPetInput!
+  ): Pet
+}
+
+"""No description available."""
+input NewPetInput {
+  """No description available."""
+  name: String!
+
+  """No description available."""
+  tag: String
+}
+
+"""No description available."""
+type Pet {
+  """No description available."""
+  id: Float
+}
+
+"""The start of any query"""
+type Query {
+  """
+  Returns a user based on a single ID, if the user does not have access to the pet
+  
+  Equivalent to GET /pets/{id}
+  """
+  pet(
+    """ID of pet to fetch"""
+    id: Float!
+  ): Pet
+
+  """
+  Returns all pets from the system that the user has access to
+  
+  Equivalent to GET /pets
+  """
+  pets(
+    """maximum number of results to return"""
+    limit: Int
+
+    """tags to filter by"""
+    tags: [String]
+  ): [Pet]
+}
