@@ -1,49 +1,34 @@
 import gql from 'graphql-tag'
 
 export const typeDefs = gql`
-  type NewPetInput {
-    name: undefined!
-    tag: undefined!
+  type Task {
+    completed: Boolean
+    description: String
+    name: String
   }
 
-  type Pet {
-    id: Float
+  input TaskInput {
+    completed: Boolean
+    description: String
+    name: String
   }
 
-  input NewPetInputInput {
-    name: undefined!
-    tag: undefined!
-  }
-
-  input PetInput {
-    id: Float
-  }
-
-  input NewPetInputFilter {
-    name: undefined
-    tag: undefined
-  }
-
-  input PetFilter {
-    id: Float
+  input TaskFilter {
+    completed: Boolean
+    description: String
+    name: String
   }
 
   type Query {
-    findNewPetInputs(fields: NewPetInputFilter!): [NewPetInput!]!
-    findPets(fields: PetFilter!): [Pet!]!
-    findAllNewPetInputs: [NewPetInput!]!
-    findAllPets: [Pet!]!
+    findTasks(fields: TaskFilter!): [Task!]!
+    findAllTasks: [Task!]!
     ## Custom queries
-    pet(id: Float!): Pet
-    pets(limit: Int, tags: [String]): [Pet]
+    task(taskId: String!): Task
+    tasks: [Task]
   }
 
   type Mutation {
-    createNewPetInput(input: NewPetInputInput!): NewPetInput!
-    createPet(input: PetInput!): Pet!
-    updateNewPetInput(id: ID!, input: NewPetInputInput!): NewPetInput!
-    updatePet(id: ID!, input: PetInput!): Pet!
-    ## Custom mutations
-    addPet(newPetInput: NewPetInput!): Pet
+    createTask(input: TaskInput!): Task!
+    updateTask(id: ID!, input: TaskInput!): Task!
   }
 `

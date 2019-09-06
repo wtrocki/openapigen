@@ -23,6 +23,8 @@
     "graphql-subscriptions": "1.1.0",
     "graphql-tag": "2.10.1",
     "knex": "0.19.3",
+    "nodeshift": "^3.1.1",
+    "openapi-to-graphql": "^1.6.0",
     "openapi-to-graphql-cli": "^1.5.0",
     "pg": "^7.12.1"
   },

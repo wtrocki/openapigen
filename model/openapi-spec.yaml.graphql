@@ -1,0 +1,31 @@
+"""The start of any query"""
+type Query {
+  """
+  Gets the details of a single instance of a `Task`.
+  
+  Equivalent to GET /tasks/{taskId}
+  """
+  task(
+    """A unique identifier for a `Task`."""
+    taskId: String!
+  ): Task
+
+  """
+  Gets a list of all `Task` entities.
+  
+  Equivalent to GET /tasks
+  """
+  tasks: [Task]
+}
+
+"""Task definition """
+type Task {
+  """No description available."""
+  completed: Boolean
+
+  """No description available."""
+  description: String
+
+  """No description available."""
+  name: String
+}

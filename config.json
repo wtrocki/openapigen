@@ -18,5 +18,5 @@
     "disableGen": false
   },
   "database": "pg",
-  "client": true
+  "client": false
 }

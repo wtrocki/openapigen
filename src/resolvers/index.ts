@@ -1,6 +1,5 @@
-import { newpetinputResolvers } from './generated/newpetinput'
-import { petResolvers } from './generated/pet'
+import { taskResolvers } from './generated/task'
 
 import { customResolvers } from './custom'
 
-export const resolvers = [newpetinputResolvers, petResolvers, ...customResolvers]
+export const resolvers = [taskResolvers, ...customResolvers]

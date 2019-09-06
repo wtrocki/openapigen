@@ -1,5 +1,4 @@
-import { addPet } from './addPet'
-import { pet } from './pet'
-import { pets } from './pets'
+import { task } from './task'
+import { tasks } from './tasks'
 
-export const customResolvers = [addPet, pet, pets]
+export const customResolvers = [task, tasks]
